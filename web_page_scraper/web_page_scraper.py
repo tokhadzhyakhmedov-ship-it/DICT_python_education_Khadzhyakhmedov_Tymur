@@ -83,7 +83,7 @@ def parse_pages(pages, article_type):
                         else:
                             title = "article"
 
-                        body = article_soup.find("div", class_=lambda x: x and "body" in x)
+                        body = article_soup.find("div", class_="body")
 
                         if body:
                             article_text = body.text.strip()
