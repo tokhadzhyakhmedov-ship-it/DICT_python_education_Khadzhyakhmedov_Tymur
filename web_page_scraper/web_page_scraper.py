@@ -83,11 +83,13 @@ def parse_pages(pages, article_type):
                         else:
                             title = "article"
 
-                        body = article_soup.find("div", class_="body")
+                        body = article_soup.find("p" ,class_="article__teaser")
 
                         if body:
-                            article_text = body.text.strip()
+                            article_text = str (body.text).strip()
                             save_article(folder_path, title, article_text)
+                        else:
+                            print(f"[WARNING]")
 
 
 pages, article_type = get_user_input()
